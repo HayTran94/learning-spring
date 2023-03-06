@@ -1,6 +1,7 @@
 package com.example.accessingdatajpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,9 @@ public class CustomerController {
     long currentId = 0;
     @Autowired
     public CustomerRepository customerRepository;
+    @Autowired
+    @Qualifier("mongodb")
+    public DatabaseConnector databaseConnector;
 
     @GetMapping("/get")
     public Customer getCustomer(@RequestParam(value = "id") Long id) {
