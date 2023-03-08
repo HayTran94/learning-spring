@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class UserController {
     @Autowired
-    UserRepository userRepository;
+    public UserRepository userRepository;
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public @ResponseBody List<User> getUsers() {
