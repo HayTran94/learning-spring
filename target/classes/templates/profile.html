@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Home</title>
+    <link rel="stylesheet"  type="text/css" th:href="@{/profile.css}">
 </head>
 <body>
 
 <div th:object="${profile}">
-    <p th:text="*{firstName}"></p>
-    <p th:text="*{lastName}"></p>
+    <p th:text="*{firstName}" id="firstName"></p>
+    <p th:text="*{lastName}" id="lastName"></p>
 </div>
 
 </body>
