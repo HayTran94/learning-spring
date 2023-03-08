@@ -18,4 +18,11 @@ public class WebController {
         model.addAttribute("name", name);
         return "home";
     }
+
+    @GetMapping("/profile")
+    public String profile(@RequestParam(value = "name") String name, Model model) {
+        Customer customer = new Customer("hay", "tv");
+        model.addAttribute("profile", customer);
+        return "profile";
+    }
 }
