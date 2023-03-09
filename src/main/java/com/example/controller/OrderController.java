@@ -21,6 +21,12 @@ public class OrderController {
         return orderRepository.findByUserId(id);
     }
 
+    @GetMapping("/order/byuseridordered")
+    // http://localhost:8080/order/byuseridordered?id=123
+    public List<Order> getByUserIdOrdered(@RequestParam("id") Integer id) {
+        return orderRepository.findByUserIdOrderByItemIdDesc(id);
+    }
+
     @GetMapping("/order/byitemid")
     // http://localhost:8080/order/byitemid?id=1001
     public List<Order> getByItemId(@RequestParam("id") Integer id) {

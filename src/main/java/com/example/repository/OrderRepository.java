@@ -15,5 +15,5 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     List<Order> findByUserIdAndItemId(Integer uId, Integer iid);
 
-
+    List<Order> findByUserIdOrderByItemIdDesc(Integer id);
 }
